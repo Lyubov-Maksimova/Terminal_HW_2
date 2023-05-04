@@ -65,9 +65,9 @@
 9. **Add a string "the second 2" to the `tf_3.txt` using `cat`**
 
    ```
-   cat > tf_3.txt
+     cat > tf_3.txt
 
-   the second 2
+     the second 2
    
    ```
 
@@ -75,58 +75,75 @@
 
 
    ```
-   cat > tf_3.txt
+     cat > tf_3.txt
 
-   the sec 2
+     the sec 2
    
    ```
    
 11. **Add a string "the sec 3" to the `tf_2.txt` using `cat`**
 
 ```
-   cd ..
+      cd ..
    
-   cat > tf_2.txt
+     cat > tf_2.txt
 
-   the sec 3
+     the sec 3
 ```
        *here we use `cd ..` to go to the parent directory. We can also use `cd -`
       
 12. **Add a string "the SeCoNd 2" to the `tf_3.txt` using `cat`**
 
 ```
-   cd inner_dir_1 
+     cd inner_dir_1 
    
-   cat > tf_3.txt
+     cat > tf_3.txt
 
-   the SeCoNd 2
+     the SeCoNd 2
    
 ```
 
 13. **Add a string "the seConD 2" to the `tf_2.txt` using `cat`**
 
 ```
-   cd ..
+     cd ..
    
-   cat > tf_2.txt
+     cat > tf_2.txt
 
-   the seConD 3
+     the seConD 3
    
 ```
 
 14. **Create `tf_4.txt` with 15 strings inside** 
 
-   `seq 1 15 | cat > tf_4.txt`
+     `seq 1 15 | cat > tf_4.txt`
    
       * the seq command outputs a sequence of numbers (from 1 to 15)
       
 15. **Create `tf_5.txt` with 15 strings inside**
 
-   `seq 1 13 | cat > tf_5.txt`
+     `seq 1 13 | cat > tf_5.txt`
    
 16. **List all files**
 
-   `ls` 
+      `ls -la *.txt` 
    
-      * 
+      *The `ls` (list) command is used in the Linux shell to output directory contents and file information.The command options indicate exactly how and in what form information should be displayed on the screen
+      
+17. **Exit the folder `inner_dir_1`**
+
+        `cd ..`
+        
+18. **Output the contents of the file `tf_3.txt` to the terminal**
+
+        `cat inner_dir_1/tf_3.txt`
+        
+19. **Find the path to the file `tf_4.txt`**
+
+        `find -name tf_4.txt`
+        
+20. **Clear the contents of the file `tf_4.txt` without deleting the file**
+
+        `echo -n > inner_dir_1/tf_4.txt`
+        `
    
