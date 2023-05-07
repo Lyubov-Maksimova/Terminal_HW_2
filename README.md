@@ -117,24 +117,33 @@
 ```
 
 14. **Create `tf_4.txt` with 15 lines inside** 
+
 ```
+
      $ cd inner_dir_1/
      
      $ seq 1 15 | cat > tf_4.txt`
-   
-      * the seq command outputs a sequence of numbers (from 1 to 15). We also can create 15 lines in the file with help of editor Vim.
+     
+```
+
+         * the seq command outputs a sequence of numbers (from 1 to 15). We also can create 15 lines in the file with help of editor Vim.
       
 15. **Create `tf_5.txt` with 15 lines inside**
 
      $ seq 1 13 | cat > tf_5.txt`
    
 16. **List all files**
+
 ```
+
      $ ls
      tf_3.txt  tf_4.txt  tf_5.txt
 
 ```  
-      *The `ls` (list) command is used in the Linux shell to output directory contents and file information.The command options indicate exactly how and in what form information should be displayed on the screen
+
+      *The `ls` (list) command is used in the Linux shell to output directory contents and file information.The command options indicate exactly how and in what form information should be displayed on the screen. 
+      We also can use the command `echo *` or `echo *.txt`
+      
       
 17. **Exit the folder `inner_dir_1`**
 
@@ -155,7 +164,9 @@
 ```
         
 19. **Find the path to the file `tf_4.txt`**
+
 ```
+
      $ find -name tf_4.txt
      ./inner_dir_1/tf_4.txt
 
@@ -171,6 +182,7 @@
                                                                  `$ : > inner_dir_1/tf_4.txt`
                                                                  
 21. **Find the path to the files which have "`tf`" in their names**
+
 ```
 
     $ find -name "tf*"
@@ -183,6 +195,7 @@
 ```
 
 22. **Find the path to the files which have "`tf`" in their names in any register**
+
 ```
 
     $ find -iname "tf*"
@@ -345,11 +358,38 @@
 
     `$ mkdir inner_dir_2 ; touch inner_dir_2/file.txt`
     
+            *instead `;` we can use `&&`. This is an operator that is used to join more than one expression, and then outputs a result based on their combined result.
+            
+    
 36. **Move to any folder files with the contents of the `sec`. Use an one-line command**
+
+```
+
+    $ grep -rlw sec | xargs mv -t inner_dir_2/
+    $ ls inner_dir_2
+    file.txt  tf_2.txt  tf_3.txt
+
+```   
+    
+            *`xargs` reads arguments from input and executes the specified command using input as command arguments. 
+            `-t` (--target-directory=DIRECTORY) move all SOURCE arguments into DIRECTORY             
 
 37. **Copy files with the contents of "sec" to any folder. Use an one-line command**
 
-38. 
+```
+
+    $ mkdir inner_dir_3 && grep -rlw sec | xargs mv -t inner_dir_3/
+    $ cd inner_dir_3/
+    $ ls
+    tf_2.txt  tf_3.txt
+    
+```
+
+38. **
+
+
+
+
 
 
 
