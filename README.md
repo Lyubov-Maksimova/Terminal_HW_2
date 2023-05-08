@@ -3,6 +3,8 @@
 1. **Create a directory `dir_1`** 
 
     `$ mkdir dir_1`
+    
+            *the `mkdir` (make directory) command allows you to create a new directory. New directories created with this command grant the owner read,                  write, and execute permissions
    
 2. **Go to the folder `dir_1`**
 
@@ -50,7 +52,7 @@
 
    `$ cd inner_dir_1/`
   
-8. **Create `tf_3.txt` using `cat` with any strings**
+8. **Create `tf_3.txt` using `cat` with any lines**
 ```
     $ cat > tf_3.txt
     
@@ -66,7 +68,7 @@
     
 ```
    
-9. **Add a string "the second 2" to the `tf_3.txt` using `cat`**
+9. **Add a line "the second 2" to the `tf_3.txt` using `cat`**
 
    ```
      $ cat >> tf_3.txt
@@ -126,11 +128,11 @@
      
 ```
 
-         * the seq command outputs a sequence of numbers (from 1 to 15). We also can create 15 lines in the file with help of editor Vim.
+         *the seq command outputs a sequence of numbers (from 1 to 15). We also can create 15 lines in the file with help of editor Vim.
       
 15. **Create `tf_5.txt` with 15 lines inside**
 
-     $ seq 1 13 | cat > tf_5.txt`
+     `$ seq 1 13 | cat > tf_5.txt`
    
 16. **List all files**
 
@@ -141,8 +143,8 @@
 
 ```  
 
-      *The `ls` (list) command is used in the Linux shell to output directory contents and file information.The command options indicate exactly how and in what form information should be displayed on the screen. 
-      We also can use the command `echo *` or `echo *.txt`
+      *The `ls` (list) command is used in the Linux shell to output directory contents and file information.The command options indicate exactly how and in        what form information should be displayed on the screen. 
+       We also can use the command `echo *` or `echo *.txt`
       
       
 17. **Exit the folder `inner_dir_1`**
@@ -170,13 +172,22 @@
      $ find -name tf_4.txt
      ./inner_dir_1/tf_4.txt
 
-```    
+```  
+
+        *the command `find` is used to search for files and directories based on special conditions. It can be used in various circumstances, for example,          to search for files by permissions, owners, groups, type, size, and other similar criteria.
+         The find command has this syntax: find [folder] [parameters] criterion template [action]
+         Folder - the directory in which we will search
+         Parameters - additional parameters, for example, search depth, etc
+         Criterion - by which criterion we will search: name, date of creation, rights, owner, etc.
+         Template - directly the value by which we will select files.
+         
+         -name - search for files by name
         
 20. **Clear the contents of the file `tf_4.txt` without deleting the file**
 
      `$ echo > inner_dir_1/tf_4.txt`
      
-            *we can do it using the other commands, for example: `$ cat /dev/null > inner_dir_1/tf_4.txt`. The pseudo-device /dev/null is a kind of "black hole" in the             system. Everything that is written to this file "disappears" forever.
+            *we can do it using the other commands, for example: `$ cat /dev/null > inner_dir_1/tf_4.txt`. The pseudo-device /dev/null is a kind of "black              hole" in the system. Everything that is written to this file "disappears" forever.
                                                                  `$ > inner_dir_1/tf_4.txt`;
                                                                  `$ cp /dev/null > inner_dir_1/tf_4.txt`;
                                                                  `$ : > inner_dir_1/tf_4.txt`
@@ -219,6 +230,15 @@
 
 ```
 
+        *The name of the `grep` command stands for "global search for strings matching a regular expression and printing them". 
+        `Grep` gives a lot of possibilities for text filtering. You can select the desired strings from text files, filter the output of commands, and even          search for files in the file system that contain certain strings.
+         The syntax of the command is as follows: `$ grep [options] template [/path/to/file/or/folder...]`
+         or `$ command | grep [options] template`
+         Options are additional parameters that specify various search and output settings, such as the number of rows or the inversion mode.
+         A template is any string or regular expression that will be searched for.
+         The name of the file or folder is the place where the search will be performed. As you will see later, grep allows you to search in multiple files          and even in a directory using recursive mode.
+        
+
 24. **Find lines in files in the current folder where there is a combination of letters `sec` in any register**
 
 ```
@@ -252,15 +272,14 @@
     $ grep -n second *.*
     tf_2.txt:2:the second 2
 
-
 ```
 
 28. **Find lines in files in the current folder where there is a combination of letters `second` in any register**
 
 ```
+
     $ grep -in second *.*
     tf_2.txt:2:the second 2
-
 
 ```
 
@@ -358,7 +377,7 @@
 
     `$ mkdir inner_dir_2 ; touch inner_dir_2/file.txt`
     
-            *instead `;` we can use `&&`. This is an operator that is used to join more than one expression, and then outputs a result based on their combined result.
+            *instead `;` we can use `&&`. This is an operator that is used to join more than one expression, and then outputs a result based on their                    combined result.
             
     
 36. **Move to any folder files with the contents of the `sec`. Use an one-line command**
@@ -385,7 +404,34 @@
     
 ```
 
-38. **
+38. **Find all lines with `sec` in all text files, copy and paste the lines into a new file. Use an one-line command**
+
+```
+
+    $ grep sec *.* >> new.txt
+    $ cat new.txt
+    tf_2.txt:the second 2
+    tf_2.txt:the sec 3
+    tf_3.txt:the second 2
+    tf_3.txt:the sec 2
+    
+```
+
+39. **Delete files that contain the word `sec`. Use an one-line command**
+
+  `$ grep -rlw sec | xargs rm`
+  
+40. **Output the line "Good job!" to the terminal**
+
+```
+    $ echo Good job!
+    Good job!
+    
+```
+
+    
+
+
 
 
 
