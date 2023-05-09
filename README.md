@@ -4,19 +4,20 @@
 
     `$ mkdir dir_1`
     
-            *the `mkdir` (make directory) command allows you to create a new directory. New directories created with this command grant the owner read,                  write, and execute permissions
+            _the `mkdir` (make directory) command allows you to create a new directory. New directories created with this command grant the owner read,                  write, and execute permissions_
    
 2. **Go to the folder `dir_1`**
 
     `$ cd dir_1/`
     
-         *the `cd` command (change directory) allows you to change the current folder to another one
+            *the `cd` command (change directory) allows you to change the current folder to another one
   
  3. **Create a directory `inner_dir_1`**
  
     `$ mkdir inner_dir_1`
      
  4. **See where I am**
+ 
 ```
      $ pwd
     
@@ -46,7 +47,8 @@
     
    ```
        
-         *`cat` with the redirection operator `>` allows you to enter any characters that need to be written to the file*
+         *`cat` (concatenation), the main purpose is to combine several files into one. It is also used to write the results to another file after                    concatenation
+          `cat` with the redirection operator `>` allows you to enter any characters that need to be written to the file
         
 7. **Go to the folder `inner_dir_1`**
 
@@ -149,7 +151,7 @@
       
 17. **Exit the folder `inner_dir_1`**
 
-     $ cd ..`
+     `$ cd ..`
         
 18. **Output the contents of the file `tf_3.txt` to the terminal**
 
@@ -180,8 +182,7 @@
          Parameters - additional parameters, for example, search depth, etc
          Criterion - by which criterion we will search: name, date of creation, rights, owner, etc.
          Template - directly the value by which we will select files.
-         
-         -name - search for files by name
+         `-name` - search for files by name
         
 20. **Clear the contents of the file `tf_4.txt` without deleting the file**
 
@@ -360,6 +361,7 @@
     the SeCoNd 2
     
 ```
+        *the command `tail` is used to view the end of the file. By means of `-n`, the number of lines intended for display is set
        
 34. **Print the first 4 lines of any text file**
 
@@ -372,14 +374,14 @@
     the sec 3
 
 ```
-
+        *the command `head` is used to view the first 10 lines of the file. By means of `-n`, the number of lines intended for display is set
+        
 35. **Сreate a folder and a text file with the contents. Use an one-line command**
 
     `$ mkdir inner_dir_2 ; touch inner_dir_2/file.txt`
     
-            *instead `;` we can use `&&`. This is an operator that is used to join more than one expression, and then outputs a result based on their                    combined result.
+            *instead `;` we can use `&&`. This is an operator that is used to join more than one expression, and then outputs a result based on their                    combined result. In the case of &&, the commands are also executed sequentially, but the next one gets control only if the previous one ended              without an error. In case of an error, the execution of the entire chain of commands stops.
             
-    
 36. **Move to any folder files with the contents of the `sec`. Use an one-line command**
 
 ```
@@ -391,7 +393,8 @@
 ```   
     
             *`xargs` reads arguments from input and executes the specified command using input as command arguments. 
-            `-t` (--target-directory=DIRECTORY) move all SOURCE arguments into DIRECTORY             
+            `-t` (--target-directory=DIRECTORY) move all SOURCE arguments into DIRECTORY   
+            The transmission of the output data of one command to the input of another command is carried out through the transmission channel `|`
 
 37. **Copy files with the contents of "sec" to any folder. Use an one-line command**
 
