@@ -411,7 +411,7 @@
 
 ```
 
-    $ grep sec *.* >> new.txt
+    $ grep -rn sec >> new.txt
     $ cat new.txt
     tf_2.txt:the second 2
     tf_2.txt:the sec 3
